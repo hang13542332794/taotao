@@ -24,9 +24,11 @@ public class ItemServiceImpl implements ItemService {
 	@Override
 	public EasyUiDataGridResult getItemList(int total, int rows) {
 		//设置分页信息
+		//使用PageHelper分页插件里的静态方法
 		PageHelper.startPage(total, rows);
 		TbItemExample example = new TbItemExample();
 		List<TbItem> list = itemMapper.selectByExample(example);
+		//查询结果
 		PageInfo<TbItem> pageInfo = new PageInfo<>(list);
 		EasyUiDataGridResult result = new EasyUiDataGridResult();
 		result.setRows(list);

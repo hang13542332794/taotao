@@ -1,2 +1,5 @@
+com\hc\controller\ItemCatController.class
 com\hc\controller\PageController.class
 com\hc\controller\ItemController.class
+com\hc\controller\PictureController.class
+com\hc\utils\FastDFSClient.class
