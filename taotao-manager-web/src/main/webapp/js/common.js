@@ -19,7 +19,7 @@ Date.prototype.format = function(format){
     return format; 
 };
 
-var E3 = {
+var TT = TAOTAO = {
 	// 编辑器参数
 	kingEditorParams : {
 		//指定上传文件参数名称
@@ -84,7 +84,7 @@ var E3 = {
         	$(e).click(function(){
         		var form = $(this).parentsUntil("form").parent("form");
         		//打开图片上传窗口
-        		KindEditor.editor(E3.kingEditorParams).loadPlugin('multiimage',function(){
+        		KindEditor.editor(TT.kingEditorParams).loadPlugin('multiimage',function(){
         			var editor = this;
         			editor.plugin.multiImageDialog({
 						clickFn : function(urlList) {
@@ -129,7 +129,7 @@ var E3 = {
     			    			if($(this).tree("isLeaf",node.target)){
     			    				// 填写到cid中
     			    				_ele.parent().find("[name=cid]").val(node.id);
-    			    				_ele.next().text(node.text);
+    			    				_ele.next().text(node.text).attr("cid",node.id);
     			    				$(_win).window('close');
     			    				if(data && data.fun){
     			    					data.fun.call(this,node);
@@ -147,7 +147,7 @@ var E3 = {
     },
     
     createEditor : function(select){
-    	return KindEditor.create(select, E3.kingEditorParams);
+    	return KindEditor.create(select, TT.kingEditorParams);
     },
     
     /**
@@ -234,7 +234,7 @@ var E3 = {
     initOnePicUpload : function(){
     	$(".onePicUpload").click(function(){
 			var _self = $(this);
-			KindEditor.editor(E3.kingEditorParams).loadPlugin('image', function() {
+			KindEditor.editor(TT.kingEditorParams).loadPlugin('image', function() {
 				this.plugin.imageDialog({
 					showRemote : false,
 					clickFn : function(url, title, width, height, border, align) {

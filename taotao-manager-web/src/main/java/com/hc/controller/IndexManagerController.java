@@ -1,0 +1,21 @@
+package com.hc.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.hc.common.pojo.TaotaoResult;
+import com.hc.search.service.SearchItemService;
+
+@Controller
+public class IndexManagerController {
+	@Autowired
+	private SearchItemService searchItemService;
+	@RequestMapping("/index/import")
+	@ResponseBody
+	public TaotaoResult importIndex()throws Exception{
+		TaotaoResult taotaoResult = searchItemService.importItemsToIndex();
+		return taotaoResult;
+	}
+}

@@ -1,6 +1,7 @@
 com\hc\controller\ItemCatController.class
 com\hc\controller\ContentCatogoryController.class
 com\hc\controller\PageController.class
+com\hc\controller\IndexManagerController.class
 com\hc\controller\ContentController.class
 com\hc\controller\PictureController.class
 com\hc\controller\ItemController.class

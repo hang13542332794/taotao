@@ -38,4 +38,5 @@
 	<dubbo:reference interface="com.hc.service.ItemCatService" id="itemCatService" timeout="300000"/>
 	<dubbo:reference interface="com.hc.content.service.ContentCategoryService" id="contentCategoryService" timeout="300000"/>
 	<dubbo:reference interface="com.hc.content.service.ContentService" id="contentService" timeout="300000"/>
+	<dubbo:reference interface="com.hc.search.service.SearchItemService" id="searchItemService" timeout="300000"/>
 </beans>
